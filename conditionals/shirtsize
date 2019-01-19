@@ -1,0 +1,31 @@
+var shirtWidth = 20;
+var shirtLength = 29;
+var shirtSleeve = 8.38;
+
+if ((shirtWidth >= 18.00 && shirtWidth < 20.00 ) &&
+    (shirtLength >= 28.00 && shirtLength < 29.00) &&
+    (shirtSleeve >= 8.13 && shirtSleeve < 8.38)){
+    console.log("S");
+} else if ((shirtWidth >= 20.00 && shirtWidth < 22.00 ) &&
+    (shirtLength >= 29.00 && shirtLength < 30.00) &&
+    (shirtSleeve >= 8.38 && shirtSleeve < 8.63)){
+    console.log("M");
+} else if ((shirtWidth >= 22.00 && shirtWidth < 24.00 ) &&
+    (shirtLength >= 30.00 && shirtLength < 31.00) &&
+    (shirtSleeve >= 8.63 && shirtSleeve < 8.88)){
+    console.log("L");
+} else if ((shirtWidth >= 24.00 && shirtWidth < 26.00 ) &&
+    (shirtLength >= 31.00 && shirtLength < 33.00) &&
+    (shirtSleeve >= 8.88 && shirtSleeve < 9.63)){
+    console.log("XL");
+} else if ((shirtWidth >= 26.00 && shirtWidth < 28.00 ) &&
+    (shirtLength >= 33.00 && shirtLength < 34.00) &&
+    (shirtSleeve >= 9.63 && shirtSleeve < 10.13)){
+    console.log("2XL");
+} else if ((shirtWidth === 28.00) &&
+    (shirtLength === 34.00) &&
+    (shirtSleeve === 10.13)){
+    console.log("3XL");
+} else {
+    console.log("N/A");
+}
