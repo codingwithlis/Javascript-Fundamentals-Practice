@@ -1,0 +1,9 @@
+var favoriteSport = function(sportName){
+  console.log("Matt's fav sport is " + sportName);
+};
+
+function sports(messageFunction, name){
+  messageFunction(name);
+}
+
+sports(favoriteSport, "baseball");
