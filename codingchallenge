@@ -1,0 +1,21 @@
+var myArray = [];
+
+myArray = ["Maria Alfonso", "live:c5b9ba572956bd4b"]
+
+function cutName(name){
+ var nameArray = name.split(" ");
+ console.log(nameArray);
+
+ if (name.length === 0){
+   return [];
+ }
+ return nameArray
+}
+
+var myInfo = {};
+
+myInfo = {
+   fullName: cutName(myArray[0]), 
+   skype: myArray[1],
+   github: "lisandralfonso1
+};
