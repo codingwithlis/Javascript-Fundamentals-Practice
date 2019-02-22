@@ -1,0 +1,50 @@
+// Using `firstNPrimes`, write a function `sumOfNPrimes(n)` that returns the sum of
+// the first `n` prime numbers.
+//
+// Examples:
+// sumOfNPrimes(0); // => 0
+// sumOfNPrimes(1); // => 2
+// sumOfNPrimes(4); // => 17
+
+function isPrime(num) {
+  if (num < 2) {
+    return false;
+  }
+  
+  for (var i =2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+
+function firstNPrimes(n){
+  var primes = [];
+  var i = 2;
+  
+  while(primes.length < n) {
+    if (isPrime(i)) {
+      primes.push(i);
+    }
+    
+    i += 1;
+  }
+  
+  return primes;
+}
+
+function sumOfNPrimes(n){
+var sum = 0;
+var primes = firstNPrimes(n);
+
+for(var i = 0; i < primes.length; i += 1){
+    sum += primes[i];
+}
+
+return sum;
+}
+
+console.log(sumOfNPrimes(4));
