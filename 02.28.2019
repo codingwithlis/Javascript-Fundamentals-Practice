@@ -1,0 +1,98 @@
+// Exercise 1 (strings)
+function getInitials (firstName, lastName){
+return firstName[0] + "." + lastName[0] + "."
+}
+
+// Exercise 2 (arrays, strings)
+function minAndMax (numbers) {
+return "Min is " + numbers[0] + ". Max is " + numbers[numbers.length - 1]
+}
+
+// Exercise 3 (numbers, conditionals)
+function isEven (number) {
+if (number % 2 === 0){
+  return true;
+}else {
+  return false;
+}
+}
+
+// Exercise 4 (strings, objects)
+function introduceFriend (friendObj) {
+return "This is my friend " + friendObj.name + ". Their title is " + friendObj.occupation;
+}
+
+// Exercise 5 (conditionals and comparison operators)
+function spiceThreshold (integer) {
+if (integer === 0){
+  return "No spice!";
+}else if (integer > 0 && integer <= 3){
+  return "Mild!";
+}else if (integer > 3 && integer <= 7){
+  return "Medium!";
+}else if (integer > 7 && integer <= 10){
+  return "Hot!"
+}
+}
+
+// Exercise 6 (objects)
+var obj = {
+dayOfTheWeek : "Sunday",
+monthOfTheYear : "January",
+seasonOfTheYear : "Winter"
+};
+
+function idealTimes () {
+return obj;
+}
+
+// Exercise 7 (strings, conditionals)
+function isThisAVowel (letter) {
+if (letter === "a" || letter === "e" || letter === "i" ||letter === "o" || letter === "u" || letter === "A" || letter === "E" || letter === "I" || letter === "O" || letter === "U"){
+  return true;
+}else {
+  return false;
+}
+}
+
+// Exercise 8 (arrays, loops)
+function countOccurences (collection, number) {
+var sum = 0;
+for (var i = 0; i < collection.length; i ++){
+  if (collection[i] === number){
+    sum ++;
+  }
+}
+return sum;
+}
+
+// Exercise 9 (conditionals, objects)
+function lowBatteryNotification (phoneInfo) {
+ if (phoneInfo.batteryPercentage <= 25){
+   return "Low Power. Charge Soon!";
+ }else {
+   return null;
+ }
+}
+
+// Exercise 10 (arrays, strings)
+function blackJackResponse(cardValues) {
+sum = 0;
+for (var i = 0; i < cardValues.length; i ++){
+  sum += cardValues[i];
+}
+return sum;
+}
+
+// Additional Exercises
+// Exercise 1
+
+function hasAllNumbers (array) {
+for (var i = 0; i < array.length; i ++){
+  if (typeof array[i] === "number"){
+  }else {
+    return false;
+  }
+}
+return true;
+}
