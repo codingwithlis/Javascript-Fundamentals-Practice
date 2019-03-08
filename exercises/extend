@@ -1,0 +1,13 @@
+function extend(obj1, obj2) {
+  var keyz1 = Object.keys(obj1);
+  var keyz2 = Object.keys(obj2);
+
+  for (var i = 0; i < keyz2.length; i++) {
+    var searchKey = keyz2[i];
+    if (keyz1.indexOf(searchKey) === -1) {
+      obj1[searchKey] = obj2[searchKey];        
+    }
+  }
+  return obj1;
+}
+
