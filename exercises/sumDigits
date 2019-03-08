@@ -1,0 +1,14 @@
+
+function sumDigits(num) {
+  var numString = num.toString(); 
+  var starting = 0;
+  var sum = 0;
+  if (num < 0) { 
+    sum -= Number(numString[1]); 
+    starting += 2; 
+  }
+  for (var i = starting; i < numString.length; i++) { 
+    sum += Number(numString[i]);
+  }
+  return sum;
+}
