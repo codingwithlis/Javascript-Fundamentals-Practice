@@ -1,0 +1,13 @@
+
+function getAllWords(str) {
+  var stringArray = str.split(" ");
+  console.log(stringArray);
+
+  if(str.length === 0){
+    return [];
+  }
+
+  return stringArray;
+}
+
+var output = getAllWords('Radagast the Brown');
