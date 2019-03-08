@@ -1,0 +1,19 @@
+
+function getAllLetters(str) {
+var arr = [];
+for (var i = 0; i <= str.length - 1; i++) {
+arr.push(str[i]);
+}
+return arr;
+}
+
+var output = getAllLetters('Radagast');
+console.log(output); // --> ['R', 'a', 'd', 'a', 'g', 'a', 's', 't']
+
+
+// or function getAllLetters(str) {
+ 
+// return str.split("");
+ 
+  
+//}
