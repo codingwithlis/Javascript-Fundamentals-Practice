@@ -1,0 +1,11 @@
+var obj = {
+  age: 45
+};
+
+function isPersonOldEnoughToDrinkAndDrive(person) {
+return false;
+}
+
+var output = isPersonOldEnoughToDrinkAndDrive(obj);
+console.log(output); // --> false
+
