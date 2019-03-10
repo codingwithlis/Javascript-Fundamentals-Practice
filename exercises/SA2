@@ -148,14 +148,21 @@ console.log(shareFavoriteDessert ());
 // Exercise 9 (numbers, strings)
 // Write a function inchesConverter which accepts a number in inches, converts into feet and inches, then returns a string with feet and inches (see sample function calls below for precise syntax expectations). Note: every 12 inches is 1 foot
 
-// function inchesConverter (inches) {
-//   //your code here 
-// }
-// Calling your function should result in:
+function inchesConverter (inches) {
+var total = inches / 12;
+if (total < 1 && total >= 0){
+  return "0 feet " + inches + " inches";
+} else {
+  var string = JSON.stringify(total);
+  var splitted = string.split(".");
+  var inch = inches % 12;
+  return splitted[0] + " feet " + inch + " inches";
+}
+}
 
-// inchesConverter(64); // "5 feet 4 inches"
-// inchesConverter(102); // "8 feet 6 inches"
-// inchesConverter(9); // "0 feet 9 inches"
+inchesConverter(64); // "5 feet 4 inches"
+inchesConverter(102); // "8 feet 6 inches"
+inchesConverter(9); // "0 feet 9 inches"
 
 // Exercise 10 (objects, arrays, loops)
 // Write a function displayOptions which receives an object "displayDevice", and returns an array. The input object's properties will be "video output" options, each of which will either have a true or false value. Your function should collect all the "video output" names which have true values.
@@ -205,14 +212,21 @@ displayOptions(monitor002); //["HDMI1", "HDMI2", "DVI"];
 // if the input converts to less than 1 foot (11 inches or less), only return a string with inches (without "0 feet").
 // Hint: unsure how to include a single quote or double quote in your output string? Here's one strategy: check out backslash escape character under "special characters".
 
-// function inchesConverterExtended (inches) {
-//  //your code here   
-// }
-// Calling your function should result in:
+function inchesConverterExtended (inches) {
+  var total = inches / 12;
+if (total < 1 && total >= 0){
+  console.log(inches + '"');
+} else {
+  var string = JSON.stringify(total);
+  var splitted = string.split(".");
+  var inch = inches % 12;
+  console.log(splitted[0] + "\'" + inch + '"');
+}
+}
 
-// inchesConverter(64); // "5' 4""
-// inchesConverter(102); // "8' 6""
-// inchesConverter(9); // "9""
+inchesConverterExtended(64); // "5' 4""
+inchesConverterExtended(102); // "8' 6""
+inchesConverterExtended(9); // "9""
 
 // Exercise 2
 // Given a list of people, write a function whoWillBeAtLeast30 that returns a list of people's names who will be 30 years old or older by the end of the year. Note: Assume the current year is 2018.
@@ -282,7 +296,11 @@ largerThan1000("$400"); //false
 // Write a function isLonger which takes in two strings, each of which will be a measurement in feet and inches (denoted by ' for feet and " for inches, and returns true if the first is longer, and false if the 2nd is longer or the same length.
 
 function isLonger (length1, length2) {
-  //your code here
+  if (length1 > length2){
+    return true;
+  }else if (length2 >= length1){
+    return false;
+  }
 }
 
 // Calling your function should result in:
@@ -292,8 +310,6 @@ function isLonger (length1, length2) {
 var iCE = inchesConverterExtended
 var inputA = iCE(102); //"8' 6""
 var inputB = iCE(64); //"5' 4""
-
-
 var inputC = iCE(7); //"7""
 
 isLonger(inputA, inputB); //true
