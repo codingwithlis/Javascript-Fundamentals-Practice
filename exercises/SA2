@@ -1,0 +1,301 @@
+// Self Assessment 2
+// Exercise 1 (numbers)
+// Write a function calculateTotalWithTax which accepts a number "subTotal" and returns the subtotal plus a 9.75% tax.
+
+function calculateTotalWithTax (subTotal) {
+return subTotal + (subTotal * .0975);
+}
+
+// Calling your function should result in:
+
+calculateTotalWithTax(250); //274.375
+calculateTotalWithTax(500); //548.75
+
+// Exercise 2 (arrays, loops, and numbers)
+// Write a function countBy which takes in a number, and returns an array of 5 numbers starting from the input value to the 5th multiple of that input value.
+
+function countBy(num) {
+   let newArray = [];
+  for (let i = num; i < num*6; i += num) {
+   newArray.push(i);
+ 
+ } 
+  return newArray;
+}
+
+// Calling your function should result in:
+
+countBy(5); // [5, 10, 15, 20, 25];
+countBy(10); // [10, 20, 30, 40, 50];
+countBy(1); // [1, 2, 3, 4, 5];
+countBy(4); // [4, 8, 12, 16, 20];
+
+// Exercise 3 (arrays)
+// Write a function getFirst5 which returns the first 5 elements of the input array in a new array. If the array has less than 5 elements, then return all the elements in a new array.
+
+function getFirst5 (inputArr) {
+return inputArr.splice(0, 5);
+}
+
+// Calling your function should result in:
+
+getFirst5([10, 20, 30, 40, 50, 60, 70, 80, 90, 100]); //[10, 20, 30, 40, 50];
+getFirst5(["a", "b", "c"]); //["a", "b", "c"];
+
+// Exercise 4 (objects, strings)
+// Write a function bankAccountChecker which receives an object, which represents someone's entire banking info, and an "account" string. Your function should check the input "account" of the banking info, and return a string with the balance and the account checked (see sample function calls below).
+
+function bankAccountChecker (bankingInfo, account) {
+for(var i in bankingInfo){
+return "You have $" + bankingInfo[i] + " in your " + account + " account";
+}
+}
+
+var account001 = {
+  checking: 1000000,
+  savings: 2
+};
+
+var account002 = {
+  business: 2000000,
+  personal: -4
+};
+
+var account003 = {
+  travel: 534,
+  education: 1012
+};
+
+bankAccountChecker(account001, 'checking'); //"You have $1000000 in your checking account"
+bankAccountChecker(account002, 'personal'); //"You have $-4 in your personal account"
+bankAccountChecker(account003, 'travel'); //"You have $534 in your travel account"
+
+
+// Exercise 5 (objects, conditionals)
+// Write a function notificationDisplay which accepts an object, and checks the number of notifications in it. Your function should return the number as a string if it's less than or equal to 99, and 99+ if there are more than 99 notifications.
+
+function notificationDisplay (appObject) {
+if (appObject.notifications > 99){
+  console.log("99+");
+}else {
+  console.log(JSON.stringify(appObject.notifications));
+}
+}
+
+// Calling your function should result in:
+
+var appA = {name: "SwapChat", notifications: 4}
+var appB = {name: "Twiddler", notifications: 209}
+var appC = {name: "Messages", notifications: 99}
+
+notificationDisplay(appA); //"4"
+notificationDisplay(appB); //"99+"
+notificationDisplay(appC); //"99"
+// Hint: Not sure how to turn a number into a string? Here's one of many strategies: check out Number's toString method
+
+// Exercise 6 (arrays, numbers)
+// Write a function tripleAllNumbers which accepts an array of numbers, and returns a new array multiplying each value by 3.
+
+function tripleAllNumbers (numbers) {
+var newArr = [];
+for (var i = 0; i < numbers.length; i++){
+  newArr.push(numbers[i] *3)
+}
+return newArr;
+}
+
+// Calling your function should result in:
+
+tripleAllNumbers([1, 3, 5, 7, 9]); //[3, 9, 15, 21, 27];
+tripleAllNumbers([10, 15, 20, 25]); //[30, 45, 60, 75];
+
+// Exercise 7 (conditionals, strings)
+// Write a function robotBarBouncer which takes a name string and an age number. Your function should return a greeting for the person if they are 21 and over, or return a message denying them entry (see sample function calls below for precise syntax expectation)
+
+function robotBarBouncer (name, age) {
+if (age >= 21){
+  console.log("Welcome, " + name + "!");
+}else {
+  console.log("Sorry, " + name + ". We can\'t serve people under 21.")
+}
+}
+
+robotBarBouncer("Mary", 22); //"Welcome, Mary!"
+robotBarBouncer("Richard", 20); //"Sorry, Richard. We can't serve people under 21."
+
+// Exercise 8 (objects)
+// Write a function shareFavoriteDessert which takes in no arguments, but returns an object which you define with at least 3 key-value pairs that describe your favorite dessert.
+
+function shareFavoriteDessert () {
+var object = {
+  name: "Chocolate Cake",
+  store: "Publix",
+  delicious: "duh"
+};
+return object;
+}
+
+console.log(shareFavoriteDessert ());
+// Your function could output something like this:
+
+// {
+//   name: "Flan",
+//   countryOfOrigin: "Spain",
+//   delicious: true,
+//   amountEatenInMyLifetime: "not enough"
+// }
+
+// Exercise 9 (numbers, strings)
+// Write a function inchesConverter which accepts a number in inches, converts into feet and inches, then returns a string with feet and inches (see sample function calls below for precise syntax expectations). Note: every 12 inches is 1 foot
+
+// function inchesConverter (inches) {
+//   //your code here 
+// }
+// Calling your function should result in:
+
+// inchesConverter(64); // "5 feet 4 inches"
+// inchesConverter(102); // "8 feet 6 inches"
+// inchesConverter(9); // "0 feet 9 inches"
+
+// Exercise 10 (objects, arrays, loops)
+// Write a function displayOptions which receives an object "displayDevice", and returns an array. The input object's properties will be "video output" options, each of which will either have a true or false value. Your function should collect all the "video output" names which have true values.
+
+function displayOptions (displayDevice) {
+  var arr = [];
+for (var key in displayDevice){
+if (displayDevice[key] === true){
+  arr.push(key);
+}
+}
+return arr;
+}
+
+// Calling your function should result in:
+
+var televisionA = {
+  VGA: false,
+  HDMI1: true,
+  HDMI2: true
+}
+var monitor001 = {
+  VGA: true,
+  DVI: false,
+  HDMI1: true,
+  HDMI2: true
+}
+var monitor002 = {
+  HDMI1: true,
+  HDMI2: true,
+  DVI: true
+}
+
+displayOptions(televisionA); //["HDMI1", "HDMI2"];
+displayOptions(monitor001); //["VGA", "HDMI1", "HDMI2"];
+displayOptions(monitor002); //["HDMI1", "HDMI2", "DVI"];
+
+// (Disclaimer! You may encounter this, or you may not -- ignore if it is not an issue for you): due to the unordered nature of JavaScript objects, do not worry about the order of your function's output array -- simply ensure that all the keys with true values are included in your output array.
+
+// Additional Exercises
+// Exercise 1
+// Write a function inchesConverterExtended which accepts a number in "inches", converts into feet and inches, then returns a string with feet and inches (see sample function calls below for precise syntax expectations). Note: 12 inches equal 1 foot (and vice versa).
+
+// This is different from inchesConverter because of two new expectations:
+
+// the output string will no longer say feet or inches but rather a single quote: ' for feet and a double quote (") for inches
+// if the input converts to less than 1 foot (11 inches or less), only return a string with inches (without "0 feet").
+// Hint: unsure how to include a single quote or double quote in your output string? Here's one strategy: check out backslash escape character under "special characters".
+
+// function inchesConverterExtended (inches) {
+//  //your code here   
+// }
+// Calling your function should result in:
+
+// inchesConverter(64); // "5' 4""
+// inchesConverter(102); // "8' 6""
+// inchesConverter(9); // "9""
+
+// Exercise 2
+// Given a list of people, write a function whoWillBeAtLeast30 that returns a list of people's names who will be 30 years old or older by the end of the year. Note: Assume the current year is 2018.
+
+function whoWillBeAtLeast30 (people) {
+var newArr = [];
+for (var key in people){
+  if (people[key].birthday.year <= 1988){
+    newArr.push(people[key].name);
+  }
+}
+return newArr;
+}
+
+// Calling your function should result in:
+
+var people = [
+ {name : 'Sarah', birthday : { month : 'June', day : 10, year : 1980}},
+ {name : 'Alex', birthday : { month : 'August', day : 21, year : 1984}},
+ {name : 'Chris', birthday : { month : 'December', day : 20, year : 1983}},
+ {name : 'Kira', birthday : { month : 'October', day : 30, year : 1988}},
+ {name : 'Ana', birthday : { month : 'Jan', day : 11, year : 1990}}
+];
+
+whoWillBeAtLeast30(people); // ['Sarah', 'Alex', 'Chris', 'Kira'];
+
+
+// Exercise 3
+// Write a function indexOfLargest which takes in an array of unsorted numbers, and returns the index of the largest number in the array. If there are duplicates of the largest number, return the first instance's index.
+
+function indexOfLargest (numbers) {
+  var largest = Math.max(...numbers);
+  return numbers.indexOf(largest);
+}
+
+// Calling your function should result in:
+
+indexOfLargest([1, 5, 9, 7, 10, 2]); // 4
+indexOfLargest([2, 4, 11, 3, 1, 20]); // 5
+indexOfLargest([30, 1, 4, 2, 30, 0]); // 0
+indexOfLargest([6, 5, 5]); // 0
+indexOfLargest([1,2]); // 1
+
+// Exercise 4
+// Write a function largerThan1000 which accepts a string money amount, and returns true if it is greater than 1000 and false if it is less than or equal to 1000.
+
+function largerThan1000 (money) {
+var splitted = money.split("$");
+var number = parseInt(splitted[1]);
+if (number <= 1000){
+  return false;
+}else {
+  return true;
+}
+}
+
+// Calling your function should result in:
+// var text = '3.14someRandomStuff';
+// var pointNum = parseFloat(text);
+// returns 3.14
+
+largerThan1000("$4050"); //true
+largerThan1000("$10,000"); //true // doesn't work with this one 
+largerThan1000("$400"); //false
+
+// Exercise 5
+// Write a function isLonger which takes in two strings, each of which will be a measurement in feet and inches (denoted by ' for feet and " for inches, and returns true if the first is longer, and false if the 2nd is longer or the same length.
+
+function isLonger (length1, length2) {
+  //your code here
+}
+
+// Calling your function should result in:
+
+// //The function calls below assume "inchesConverterExtended" from above works, but does not require for it to work for a successful implementation of "isLonger"**
+
+var iCE = inchesConverterExtended
+var inputA = iCE(102); //"8' 6""
+var inputB = iCE(64); //"5' 4""
+
+
+var inputC = iCE(7); //"7""
+
+isLonger(inputA, inputB); //true
+isLonger(inputC, inputC); //false
+// ** this is simply to avoid spoilers on a solution to inchesConverterExtended.
