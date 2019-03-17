@@ -1,0 +1,405 @@
+// Exercise 1 (writing functions)
+// Write a function identity which expects 1 argument and simply returns that input value.
+
+function identity (argument){
+  return argument;
+}
+// Calling your function should result in:
+
+identity("hello world"); //"hello world"
+identity(500); //500
+
+// Exercise 2 (conditionals)
+// Write a function coffeeLover which takes in a boolean value, and returns the string "Enjoy a cup for free!" if the input is true, or "Take a look at our other drinks!" if the input is false.
+
+function coffeeLover(boolean){
+  if (boolean === true){
+    return 'Enjoy a cup for free!';
+  }else {
+    return 'Take a look at our other drinks!';
+  }
+}
+// Calling your function should result in:
+
+coffeeLover(true); //"Enjoy a cup for free!"
+coffeeLover(false); //"Take a look at our other drinks!"
+
+// Exercise 3 (objects, conditionals)
+// Write a function coffeeLoverExtended which takes in an object with the structure like:
+
+var customer001 = {
+  name: "John Riley",
+  ticketNumber: "A01",
+  enjoysCoffee: true
+};
+
+//likewise..
+
+var customer002 = {
+  name: "Harold Crane",
+  ticketNumber: "A02",
+  enjoysCoffee: false
+};
+// ..and returns the string "Enjoy a cup for free!" if the property enjoysCoffee has a value of true, or "Take a look at our other drinks!" if the enjoysCoffee property has a value of false
+
+// Calling your function should result in:
+
+function coffeeLoverExtended (object){
+  if (object.enjoysCoffee === true){
+    return 'Enjoy a cup for free!';
+  }else {
+    return 'Take a look at our other drinks!';
+  }
+}
+
+coffeeLoverExtended(customer001); //"Enjoy a cup for free!"
+coffeeLoverExtended(customer002); //"Take a look at our other drinks!"
+
+// Exercise 4 (numbers)
+// Write a function convertToKilometers which expects a number of miles passed in, and returns that number multiplied by 1.60934 (an accepted approximation of 1 mile in kilometers).
+
+function convertToKilometers(miles) {
+// 1 mile === 1.6 km 
+return miles * 1.60934;
+}
+
+// Calling your function should result in:
+
+convertToKilometers(50); //80.467
+convertToKilometers(361); //580.973
+
+// Exercise 5 (conditionals and numbers)
+// Write a function isGoodFreethrowShooter which takes in a shooting percentage (a number you can assume will be between 0 and 1 -- exclusive of 1), and returns based on the following criteria:
+
+// If the number is between 0-0.65, return "Horrible freethrow shooter"
+// If the number is between 0.65-0.80 return "Decent freethrow shooter"
+// If the number is between 0.80-1.00 return "Great freethrow shooter"
+
+// Each range is inclusive of the lower bound, and exclusive of the upper -- in other words, 0.65 is counted as a "Decent freethrow shooter" (not "Horrible freethrow shooter") and 0.80 is considered a "Great freethrow shooter" (not "Decent freethrow shooter"). Additionally, you can get a number as high as 0.99, but never 1 (this is what the original problem statement means by "exclusive of 1").
+
+function isGoodFreethrowShooter (percentage){
+  if (percentage >= 0 && percentage < 0.65){
+    return 'Horrible freethrow shooter';
+  }else if (percentage >= 0.65 && percentage < 0.80){
+    return 'Decent freethrow shooter';
+  }else if (percentage >= 0.80 && percentage < 1.00){
+    return 'Great freethrow shooter';
+  }
+  }
+
+// Calling your function should result in:
+
+isGoodFreethrowShooter(0.90); //"Great freethrow shooter"
+isGoodFreethrowShooter(0.09); //"Horrible freethrow shooter"
+isGoodFreethrowShooter(0.75); //"Decent freethrow shooter"
+
+// Exercise 6 (strings)
+// Write a function dogsIWouldPet which takes in an item (string), and returns a sentence stating dogs you would pet in comparison to the item (see sample call below).
+
+// Calling your function should result in:
+
+function dogsIWouldPet (dog){
+  if (dog === 'I do not like dogs'){
+    return 'I would not pet dogs';
+  }else {
+    return 'I would pet dogs no bigger than an ' + dog;
+  }
+}
+
+dogsIWouldPet("ottoman"); //"I would pet dogs no bigger than an ottoman"
+dogsIWouldPet("small horse"); //"I would pet dogs no bigger than an small horse"
+dogsIWouldPet("Terrier"); //"I would pet dogs no bigger than an Terrier"
+dogsIWouldPet('I do not like dogs')//'I would not pet dogs'
+
+// Bonus (extra): If your function were passed in a string "I do not like dogs", you can have your function return "I would not pet dogs".
+
+// Exercise 7 (numbers and conditionals)
+// Write a function isTallEnough which takes in a height (number) in inches, and returns true if the input is greater than or equal to 48, and false if it's less than 48 inches.
+
+function isTallEnough (inches){
+  if (inches >= 48){
+    return true;
+  }else {
+    return false;
+  }
+}
+// Calling your function should result in:
+
+isTallEnough(72); //true
+isTallEnough(28); //false
+
+// Exercise 8 (objects)
+// Write a function favoriteDessert which takes in no arguments, but returns an object with 3 key-value pairs. The names of each property and their respective values are up to you, but the values cannot be undefined. How would you describe your favorite dessert?
+
+// For example, one could return an object such as:
+
+// { name: "Flan", ovenTemp: 350, prepTime: "25 minutes + 50 minutes chilling" }
+
+// Another example could be:
+
+// { name: "Gelato", countryOfOrigin: "Italy", flavor: "Chocolate Chip" }
+// Get creative!
+
+function favoriteDessert () {
+var dessert = {
+  name : 'Cake',
+  store : 'Publix',
+  flavor : "All Flavors"
+}
+return dessert;
+}
+
+//console.log(favoriteDessert());
+
+// Exercise 9 (loops)
+// Write a function countNumOfStrings which takes in an array of mixed elements (different data types), and returns the number of strings there are in the array.
+
+// Calling your function should result in:
+
+function countNumOfStrings (array){
+  var counter = 0;
+  for (var i = 0; i < array.length; i ++){
+    if (typeof array[i] === 'string'){
+      counter ++;
+    }
+  }
+  return counter;
+}
+
+countNumOfStrings(["hello", "world", 5, true, {}]); //2
+countNumOfStrings(["foo", 2, 10, "bar", 5, false, {}, "baz"]); //3
+countNumOfStrings(["There is only one string in this example"]); //1
+
+// Hint: Recall typeof? If not: check it out on MDN. :-)
+
+// Exercise 10 (loops)
+// Write a function listLengthOfAllWords which takes in an array of words (strings), and returns an array of numbers representing the length of each word.
+
+function listLengthOfAllWords (array){
+  var result = [];
+  for (var i = 0; i < array.length; i ++){
+    result.push(array[i].length);
+  }
+  return result;
+}
+// Calling your function should result in:
+
+listLengthOfAllWords(['hello', 'world', 'I', 'can', 'code', 'well']); //[5, 5, 1, 3, 4, 4];
+
+// Additional Exercises
+// Exercise 1
+// Write a function tallEnoughToRide which takes in an array of people objects, and returns a an array of names of people who are greater than or equal to 48 inches in height.
+
+// You can assume an input which looks like this:
+
+function tallEnoughToRide (array) {
+  var result = [];
+  for (var i = 0; i < array.length; i ++){
+    if (array[i].heightInInches >= 48){
+      result.push(array[i].name);
+    }
+  }
+  return result;
+}
+var groupA = [
+  {
+    name: "Mia",
+    age: 10,
+    heightInInches: 52
+  },
+  {
+    name: "Jaya",
+    age: 9,
+    heightInInches: 45
+  },
+  {
+    name: "Kiana",
+    age: 10,
+    heightInInches: 55
+  },
+  {
+    name: "Alex",
+    age: 11,
+    heightInInches: 48
+  }
+]
+
+// Calling your function should result in:
+
+tallEnoughToRide(groupA); //["Mia", "Kiana", "Alex"];
+
+// Remember: your function should work off of the data it receives, not a global variable or only the specific example above. I.e. If someone called your function with 10 objects (with all safely have the same properties), it should work just as well.
+
+//DID NOT COMPLETE 
+// Exercise 2
+// Working off of the same data structure as tallEnoughToRide, write a function tallestPerson which takes in an array of people objects as well, and returns the name of the person with the greatest height, along with how tall they are (see sample input below).
+
+function tallestPerson (array){
+  var allHeights = [];
+  for( var i = 0; i < array.length; i ++){
+    allHeights.push(array[i].heightInInches);
+    if (array[i].heightInInches === Math.max(...allHeights)){
+      return array[i].name + ' at ' + Math.max(...allHeights) + ' inches';
+    }
+  }
+}
+
+
+// Calling your function should result in:
+
+tallestPerson(groupA); //"Kiana at 55 inches"
+
+
+// Exercise 3
+// You were put in charge of ordering for tonight's company get-together, and you were given a data set with people's meal preferences and dietary restrictions. Write a function orderAVegetarianDish which takes in an array of empoloyee objects, and returns true if at least 1 person is listed "vegetarian" on their "mealPreferences". Otherwise, your function should return false.
+
+var staffA = [
+  {
+    name: "Lia",
+    department: "Human Resources",
+    dietaryRestrictions: [],
+    mealPreferences: "no preferences"
+  },
+  {
+    name: "Sebastian",
+    department: "Engineering",
+    dietaryRestrictions: ["dairy free", "gluten free"],
+    mealPreferences: "vegetarian"
+  },
+  {
+    name: "Ari",
+    department: "Executive",
+    dietaryRestrictions: ["dairy free"],
+    mealPreferences: "vegetarian"
+  },
+  {
+    name: "Martha",
+    department: "Legal",
+    dietaryRestrictions: ["nut allergies"],
+    mealPreferences: "non-vegetarian"
+  }
+];
+
+function orderAVegetarianDish (array) {
+  var counter = 0;
+for (var i = 0; i < array.length; i ++){
+if (array[i].mealPreferences === 'vegetarian'){
+  counter ++;
+}
+}
+if (counter > 0){
+  return true;
+}else {
+  return false;
+}
+}
+// Calling your function should result in:
+
+orderAVegetarianDish(staffA); //true
+
+
+// DID NOT COMPLETE 
+// Exercise 4
+// Currently, you have a budget of $100. You have a shopping list in decreasing priority, and you want to report how many items you bought and how much it cost you. Write a function shoppingSummary which accepts an array of shopping items (objects), and returns a string with the number of items you bought, and the total amount you spent.
+
+// Notes:
+
+// You cannot spend more than your budget ($100).
+// You have enough room for all the items (if you end up buying everything), so there's no item limit -- your only limit is your budget.
+// The list is mentioned to be in "decreasing priority" simply because you do not have to sort the input array to optimize for anything else. So do not worry about coming up with any other sorting algorithm for the most "bang for your buck" or what not :-)
+// Take for example the data below:
+
+function shoppingList (array){
+  var counter = 0;
+
+  for (var i = 0; i < array.length; i++){
+  
+  }
+}
+var shoppingList = [
+  {
+    item: "rice",
+    price: 12.75,
+    weightInPounds: 20
+  },
+  {
+    item: "chicken",
+    price: 6.99,
+    weightInPounds: 1.25
+  },
+  {
+    item: "cookware",
+    price: 79.99,
+    weightInPounds: 35
+  },
+  {
+    item: "celery",
+    price: 3.99,
+    weightInPounds: 2
+  },
+  {
+    item: "carrots",
+    price: 2.85,
+    weightInPounds: 2
+  },
+  {
+    item: "green beans",
+    price: 2.55,
+    weightInPounds: 2
+  }
+];
+
+
+// Calling your function should result in:
+
+//shoppingSummary(shoppingList); //"I got 3 items at $99.73"
+
+
+// DID NOT COMPLETE 
+// Exercise 5 
+// Suppose that you wanted to take out the most expensive item on your shopping list. Write a function removeMostExpensive which returns a new array without the most expensive thing in the list. Your function should preserve the order of the items in this array.
+
+function removeMostExpensive (array){
+  var mostExpensive = 0;
+  for (var i = 0; i < array.length; i++){
+
+  }
+}
+removeMostExpensive(shoppingList);
+
+
+// Calling your function should result in:
+
+tallestPerson(groupA); //"Kiana at 55 inches"
+
+
+// Would return a new array with the following elements:
+// [
+//   {
+//     item: "rice",
+//     price: 12.75,
+//     weightInPounds: 20
+//   },
+//   {
+//     item: "chicken",
+//     price: 6.99,
+//     weightInPounds: 1.25
+//   },
+//   {
+//     item: "celery",
+//     price: 3.99,
+//     weightInPounds: 2
+//   },
+//   {
+//     item: "carrots",
+//     price: 2.85,
+//     weightInPounds: 2
+//   },
+//   {
+//     item: "green beans",
+//     price: 2.55,
+//     weightInPounds: 2
+//   }
+// ];
+//notice that the element with "cookware" is missing
+
