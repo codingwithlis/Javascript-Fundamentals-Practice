@@ -1,0 +1,41 @@
+// Exercise 1 (strings and variables):
+function helloPerson(name){
+  console.log ("Hello, " + name)
+};
+
+// Exercise 2 (boolean values/conditional statements):
+function oppositeDay(boolean){
+  if (boolean === true){
+    return false;
+  }else {
+    return true;
+  }
+};
+
+//Exercise 3 (strings):
+function get10thChar(str){
+  return str[9];
+};
+
+// Exercise 4 (using a loop, arrays, and array indexes):
+function indexesOnly(array){
+  for (var i = 0; i < array.length; i++){
+    array[i] = i;
+  }
+  return array;
+};
+
+// Exercise 5 (objects):
+function myLaptopInfo(){
+  var obj = {
+    type: "Macbook Air",
+    color: "gold",
+    yearPurchased: "2018",
+  }
+  return obj;
+};
+
+// Exercise 6 (parameters, object properties, and strings):
+function sayFavoriteFood(object){
+  return object.name +"'s favorite food is "+ object.favoriteFood;
+};
